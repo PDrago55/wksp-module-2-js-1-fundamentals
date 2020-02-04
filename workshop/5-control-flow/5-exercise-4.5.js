@@ -15,5 +15,16 @@
 // ...
 
 
-
 // many other possibilities here.
+
+for (let i = 0; i < 16; i++){
+    let type = "odd;"
+
+    if (i % 2 == 0){
+        type = "even";
+
+}
+
+console.log (`${i} is ${type}`);
+
+}

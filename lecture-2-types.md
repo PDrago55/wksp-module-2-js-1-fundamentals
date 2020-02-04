@@ -14,7 +14,12 @@ There are 6 basic types in JavaScript.
 ```js
 // Examples
 
-```
+```"bacon"
+    TRUE
+    NULL
+    1234
+    [1,2,3,4]
+    {name: fred, age: 23}
 
 If you are not sure of the type of a given value, you can use `typeof <VALUE>`
 
@@ -160,12 +165,33 @@ Of course comparison operators and logical operators are usually combined in an 
 // Look at these expressions below and determine whether they evaluate to true or false
 
 1. true || false
+
+true
+
 2. false && false
+
+false 
+
 3. 1 < 2 && 2 > 1
+
+true
+
 4. 31 < 13 || 1 < 2 && 3 > 1
+
+true, its true because part one is false but its an OR operator therefore only one of the values needs to be true...
+
 5. 400 <= 400 && 399 < 400 && (30 > 31 || 400 > 31)
+
+true because its an && term, you need the whole line to be TRUE
+
 6. true && false && false || false && true
+
+false
+
 7. true && false || true || false
+
+false -- wrong, its true because its an or operator
+
 8. true && false && false || false && true ? true && false && false || false && true : 1 < 2 && 2 > 1
 ```
 
@@ -186,6 +212,7 @@ Of course comparison operators and logical operators are usually combined in an 
 // Examples
 
 ```
+
 
 ---
 
@@ -256,8 +283,12 @@ let anArrayOfNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 let anArrayOfNumbers = ['bacon', undefined, 900, true]
 
 1. How do we access the value 900?
-2. How do we access the value `true`?
 
+array[2]
+900
+2. How do we access the value `true`?
+array[3]
+true
 ```
 
 ---
@@ -277,10 +308,11 @@ let table = [
   [31,32,33,34,35,36]
 ]
 
-1. table[0][0]
-2. table[5][5]
-3. table[2][3]
+1. table[0][0] = 1 
+2. table[5][5] = 36
+3. table[2][3] = 16
 4. How would we access the value 27?
+array [4] [2]
 ```
 
 ---
@@ -294,8 +326,14 @@ let data = [0, [], [], [1,2,3, [4]]]
 ```
 
 1. How would you access the value `0`?
+array [0]
 2. How would you access the value `3`?
+array [0:2] [2] wrong
+array [3] [2] 
 3. How would you access the value `4`?
+array [0:3] [3] wrong
+array [3] [3] [0]
+its 0 because the last array its on its own...
 
 ---
 
@@ -311,6 +349,8 @@ This object has 3 properties.
 // Example
 "it has a property with name 'givenName' and value of 'Yoda' of type string"
 
+let person = {givenName: "Yoda"}
+person.givenName // Yoda
 ```
 
 ---
@@ -323,7 +363,7 @@ Group the following items together according to their type:
 
 `'hello'`, `0`, `['mouse', 'cat', 'dog']`, `'cat'`, `false`,
 
-`null`, `7` `'42'`, `{product: 'cake', price: '50$'}`,
+`null`, `7` ,`'42'`, `{product: 'cake', price: '50$'}`,
 
 `undefined`,` ['coconut', 24, 'banana']`, `-99`
 
@@ -362,6 +402,8 @@ Values in objects can be accessed with
 let person = {name: 'Bob', age: 23};
 const otherPerson = {name: 'Joe', age: 31, height: '170cm'};
 
+peron.name// ===bob
+otherPerson['name'] // ===Joe
 ```
 
 ---
@@ -374,9 +416,11 @@ let person = {name: 'Bob', age: 23};
 let name = 'John';
 
 // What is the value of the following expressions?
-1. person.name
-2. person['name']
-3. person[name]
+1. person.name //=== Bob
+2. person['name'] // Bob
+3. person[name] //===undefined
+
+"- the problem with Q3 is that John is undefined because there are no quotes" 
 
 ```
 
@@ -391,9 +435,9 @@ let person = {name: 'bob', age: 23};
 let key = 'name';
 
 // What is the value of the following expressions:
-1. person.key
-2. person['key']
-3. person[key]
+1. person.key // undefined..
+2. person['key'] // undefined
+3. person[key] // person ['name'] //== 'bob'
 
 ```
 

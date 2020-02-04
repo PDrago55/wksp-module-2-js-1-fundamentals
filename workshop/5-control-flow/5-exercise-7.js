@@ -22,3 +22,16 @@
 // Fizz
 // Buzz
 // ...
+
+for (let i = 1; i <= 100; i++){
+    let idk = i;
+    if (i % 3 === 0){
+    idk = `Fizz (${i})`;
+    }
+    if (i % 5 === 0){
+    idk = `Buzz (${i})`
+    }
+    
+console.log (idk);
+}
+
